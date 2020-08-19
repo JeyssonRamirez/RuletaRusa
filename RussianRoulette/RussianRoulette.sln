@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentation", "1.Presentation", "{8E850E0A-A80B-4F98-8068-21AA39516465}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Application", "2.Application", "{502CE7FC-A61A-46DB-8EAC-FE31D34700DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Core", "3.Core", "{75929609-7FFD-4B81-8F4E-B5D624639C55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Data", "4.Data", "{93ADA9B0-BDB1-4A87-AABB-7DC0A41FBF20}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Crosscutting", "5.Crosscutting", "{BC6FE0CF-C559-4A00-94A2-DC13942A698D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Testing", "6.Testing", "{E0E529AB-B112-4D6A-83A1-C04D290D9BE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.IoC", "7.IoC", "{38CC6DA4-B821-4F25-A9A0-1D2A775ADCEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{0297F4A5-35E1-4DF5-AEC6-831F338BA1FE}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0297F4A5-35E1-4DF5-AEC6-831F338BA1FE} = {8E850E0A-A80B-4F98-8068-21AA39516465}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {926A4206-7934-4AB5-89FC-8CDD81BF1B82}
+	EndGlobalSection
+EndGlobal
