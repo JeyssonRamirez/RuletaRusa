@@ -11,6 +11,6 @@ namespace Core.Entities
 {
     public class Roulette : Entity
     {
-
+        public int Size { get; set; }
     }
 }

@@ -7,8 +7,22 @@
 //   <Update> 2020-08-20 - 14:39</Update>
 //   -----------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
+
 namespace RussianRoulette.Api.Model
 {
+    public class RegisterRouletteModel
+    {
+        public int Size { get; set; }
+    }
+
+    public class BaseInput
+    {
+        //Here the global attributes in the Requests
+    }
+
+
     public class BaseApiResponse
     {
 

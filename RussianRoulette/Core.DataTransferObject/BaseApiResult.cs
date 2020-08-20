@@ -15,4 +15,10 @@ namespace Core.DataTransferObject
         public string Message { get; set; }
         public object Data { set; get; }
     }
+    public class CreateRouletteResult: BaseApiResult
+    {
+        
+        public new int Data { set; get; }
+    }
+
 }

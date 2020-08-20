@@ -7,6 +7,6 @@ namespace Application.Definition
     public interface IRussianRouletteAppService
     {
         BaseApiResult GetAll();
-        BaseApiResult CreateRoulette(Roulette roulette);
+        CreateRouletteResult CreateRoulette(Roulette roulette);
     }
 }

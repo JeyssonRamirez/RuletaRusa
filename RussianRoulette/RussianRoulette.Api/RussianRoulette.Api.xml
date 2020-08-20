@@ -21,6 +21,29 @@
             <param name="services"></param>
             <returns></returns>
         </member>
+        <member name="T:RussianRoulette.Api.Controllers.CommonController">
+            <summary>
+            base Controller
+            </summary>
+        </member>
+        <member name="T:RussianRoulette.Api.Controllers.RouletteController">
+            <summary>
+            Roulette
+            </summary>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.RouletteController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.RouletteController.Post(RussianRoulette.Api.Model.RegisterRouletteModel)">
+            <summary>
+            Register Roulette
+            </summary> 
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="F:RussianRoulette.Api.Startup.Configuration">
             <summary>
             Configuration

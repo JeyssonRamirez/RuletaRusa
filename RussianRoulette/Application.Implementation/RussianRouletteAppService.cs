@@ -25,9 +25,9 @@ namespace Application.Implementation
             throw new NotImplementedException();
         }
 
-        public BaseApiResult CreateRoulette(Roulette roulette)
+        public CreateRouletteResult CreateRoulette(Roulette roulette)
         {
-            var result = new BaseApiResult();
+            var result = new CreateRouletteResult();
             result.Data = 0;
             return result;
         }

@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 
 namespace RussianRoulette.Api
 {
@@ -20,8 +22,12 @@ namespace RussianRoulette.Api
                
                 
                 .AddMvcCore()
-                
                 .AddApiExplorer()
+                .AddNewtonsoftJson(o =>
+                {
+                    o.SerializerSettings.Converters.Add(new StringEnumConverter());
+                    o.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                })
                 .Services
                 .AddCors(o => o.AddPolicy("MyPolicy", builder =>
                 {
