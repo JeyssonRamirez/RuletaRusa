@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RussianRoulette.Api", "Russ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crosscutting.DependencyInjectionFactory", "Crosscutting.DependencyInjectionFactory\Crosscutting.DependencyInjectionFactory.csproj", "{AD299721-24F0-418C-92E5-EECD10AC6DEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Common.Implementation.MongoDb", "Data.Common.Implementation.MongoDb\Data.Common.Implementation.MongoDb.csproj", "{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{AD299721-24F0-418C-92E5-EECD10AC6DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD299721-24F0-418C-92E5-EECD10AC6DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD299721-24F0-418C-92E5-EECD10AC6DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +124,7 @@ Global
 		{24E59486-5E0E-4C22-B171-F875AD8F286A} = {848F3398-2C8F-497C-83F1-AA9B8BDAF985}
 		{EF4BAB8F-B35F-4763-BFC1-8DEC92C9E650} = {0297F4A5-35E1-4DF5-AEC6-831F338BA1FE}
 		{AD299721-24F0-418C-92E5-EECD10AC6DEA} = {38CC6DA4-B821-4F25-A9A0-1D2A775ADCEC}
+		{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D} = {1C29252E-F129-45EE-9F01-65470985FB7B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {926A4206-7934-4AB5-89FC-8CDD81BF1B82}
