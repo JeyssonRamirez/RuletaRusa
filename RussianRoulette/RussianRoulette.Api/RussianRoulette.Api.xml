@@ -33,6 +33,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:RussianRoulette.Api.Controllers.BetController.CloseBet(RussianRoulette.Api.Model.Bet.CloseBetsModel)">
+            <summary>
+            Close Bets
+            </summary> 
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:RussianRoulette.Api.Controllers.CommonController">
             <summary>
             base Controller

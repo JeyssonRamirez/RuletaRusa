@@ -6,8 +6,7 @@ using Core.Entities;
 
 namespace Data.Common.Definition
 {
-    public interface IRepository<T>
-        where T : Entity
+    public interface IRepository<T> where T : Entity
     {
         IUnitOfWork UnitOfWork { get; set; }
 

@@ -8,6 +8,7 @@
 //   -----------------------------------------------------------------------
 
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Core.DataTransferObject;
 using Core.Entities;
 using Data.Common.Definition;
@@ -16,32 +17,32 @@ namespace Data.Common.Implementation.MongoDb
 {
     public class UnitOfWorkMongo : IUnitOfWork
     {
-        public void AdddEntity<T>(T item) where T : Entity
+        public Task<int> CommitInt()
         {
             throw new System.NotImplementedException();
         }
 
-        public void AttachEntity<T>(T item) where T : Entity
+        public Task RollbackChanges()
         {
             throw new System.NotImplementedException();
         }
 
-        public int CommitInt()
+        public Task AttachEntity<T>(T item) where T : Entity
         {
             throw new System.NotImplementedException();
         }
 
-        public int ExecuteQuery(string query, List<ParameterDto> parameters, bool procedure)
+        public Task<T> AddEntity<T>(T item) where T : Entity
         {
             throw new System.NotImplementedException();
         }
 
-        public void RemoveEntity<T>(T item) where T : Entity
+        public Task<bool> RemoveEntity<T>(T item) where T : Entity
         {
             throw new System.NotImplementedException();
         }
 
-        public void RollbackChanges()
+        public Task<int> ExecuteQuery(string query, List<ParameterDto> parameters, bool procedure)
         {
             throw new System.NotImplementedException();
         }

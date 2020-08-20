@@ -14,7 +14,7 @@ namespace Core.Entities
     public abstract class Entity
     {
 
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime RegistrationDate { get; set; }
         public StatusType Status { get; set; }
 

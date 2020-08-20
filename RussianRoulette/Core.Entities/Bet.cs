@@ -9,7 +9,7 @@
 
 namespace Core.Entities
 {
-    public class Bet
+    public class Bet :Entity
     {
         private long RouletteId { get; set; }
         public long UserId { get; set; }
