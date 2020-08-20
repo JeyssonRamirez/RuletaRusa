@@ -35,5 +35,15 @@ namespace DataAccess.Provider.RedisDb
             var r=await GetOne<Roulette>(data);
             return r;
         }
+
+        public async Task<Roulette> UpdateRoulette(Roulette data)
+        {
+            var r = await GetOne(data);
+            r.Color = data.Color;
+            r.Open = data.Open;
+            r.Open = data.Open;
+            return await this.AddEntity(data);
+            
+        }
     }
 }

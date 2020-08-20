@@ -9,6 +9,8 @@
 
 using Application.Definition;
 using Application.Implementation;
+using Core.GlobalRepository;
+using DataAccess.Provider.RedisDb;
 using Microsoft.Extensions.DependencyInjection;
 using Unity;
 
@@ -18,13 +20,14 @@ namespace Crosscutting.DependencyInjectionFactory
     {
         public static IServiceCollection AddApiDependencies(this IServiceCollection services)
         {
-            
+
             #region Croscutting
 
             #endregion
 
             #region injection Data Access
-
+            services.AddScoped<IBetRepository, BetRepositoryRedis>();
+            services.AddScoped<IRouletteRepository, RouletteRepositoryRedis>();
             #endregion
 
             #region Services

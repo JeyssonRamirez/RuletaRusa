@@ -11,5 +11,6 @@ namespace Core.GlobalRepository
     {
         Task<Roulette> AddRoulette(Roulette data);
         Task<Roulette> GetRoulette(Roulette data);
+        Task<Roulette> UpdateRoulette(Roulette data);
     }
 }

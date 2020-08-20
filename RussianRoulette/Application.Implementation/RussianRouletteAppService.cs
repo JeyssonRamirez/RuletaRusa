@@ -10,9 +10,11 @@
 #region
 
 using System;
+using System.Threading.Tasks;
 using Application.Definition;
 using Core.DataTransferObject;
 using Core.Entities;
+using Core.GlobalRepository;
 
 #endregion
 
@@ -20,30 +22,42 @@ namespace Application.Implementation
 {
     public class RussianRouletteAppService : IRussianRouletteAppService
     {
+        private readonly IRouletteRepository _rouletteRepository;
         public BaseApiResult GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public CreateRouletteResult CreateRoulette(Roulette roulette)
+        public async Task<CreateRouletteResult> CreateRoulette(Roulette roulette)
         {
+            roulette.Id = Guid.NewGuid();
             roulette.Open = false;
             roulette.Color = ColorType.NotDefined;
             roulette.WinnerNumber = -1;
 
+            roulette = await _rouletteRepository.AddRoulette(roulette);
+
+
 
             var result = new CreateRouletteResult();
 
+            result.Data = roulette.Id;
 
-
-            result.Data = 0;
-            
             return result;
         }
 
-        public CreateRouletteResult OpenRoulette(long rouletteId)
+        public async Task<OpenRouletteResult> OpenRoulette(Guid rouletteId)
         {
-            throw new NotImplementedException();
+            var current = await _rouletteRepository.GetRoulette(new Roulette { Id = rouletteId });
+            current.Open = true;
+            current = await _rouletteRepository.UpdateRoulette(current);
+
+            var result = new OpenRouletteResult();
+
+            result.Data = true;
+
+            return result;
+
         }
     }
 }

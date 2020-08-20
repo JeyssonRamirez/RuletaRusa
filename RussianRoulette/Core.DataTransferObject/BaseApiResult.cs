@@ -7,6 +7,8 @@
 //   <Update> 2020-08-20 - 11:57</Update>
 //   -----------------------------------------------------------------------
 
+using System;
+
 namespace Core.DataTransferObject
 {
     public class BaseApiResult
@@ -17,8 +19,13 @@ namespace Core.DataTransferObject
     }
     public class CreateRouletteResult: BaseApiResult
     {
+        public new Guid Data { set; get; }
+    }
+
+    public class OpenRouletteResult : BaseApiResult
+    {
         
-        public new int Data { set; get; }
+        public new bool Data { set; get; }
     }
 
     public class ClosedBetResult : BaseApiResult
