@@ -21,4 +21,10 @@ namespace Core.DataTransferObject
         public new int Data { set; get; }
     }
 
+    public class ClosedBetResult : BaseApiResult
+    {
+
+        public new int Data { set; get; }
+    }
+
 }

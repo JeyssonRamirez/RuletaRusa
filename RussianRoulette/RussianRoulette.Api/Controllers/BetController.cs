@@ -82,5 +82,47 @@ namespace RussianRoulette.Api.Controllers
                     { Code = 500, Message = ex.InnerException != null ? ex.InnerException.Message : ex.Message });
             }
         }
+
+        /// <summary>
+        /// Close Bets
+        /// </summary> 
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("/Close")]
+        [ProducesResponseType(typeof(HttpStatusCode), 200)]
+        [ProducesResponseType(400, Type = typeof(ApiBadResponse))]
+        public async Task<IActionResult> CloseBet([FromBody] CloseBetsModel model)
+        {
+
+            var result = new BaseApiResponse();
+            try
+            {
+
+                ValidateModel(model, result);
+                if (result.Code == (int)HttpStatusCode.BadRequest)
+                {
+                    return BadRequest(result);
+                }
+
+
+                var appResult = _betAppService.CloseBet(model.RouletteId);
+                if (appResult.Success)
+                {
+                    return Ok(appResult.Data);
+                }
+
+                return BadRequest(appResult);
+
+                //return Ok(result);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500,
+                    new BaseApiResponse
+                        { Code = 500, Message = ex.InnerException != null ? ex.InnerException.Message : ex.Message });
+            }
+        }
     }
 }

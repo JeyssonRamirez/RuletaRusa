@@ -28,7 +28,14 @@ namespace Application.Implementation
         public CreateRouletteResult CreateRoulette(Roulette roulette)
         {
             roulette.Open = false;
+            roulette.Color = ColorType.NotDefined;
+            roulette.WinnerNumber = -1;
+
+
             var result = new CreateRouletteResult();
+
+
+
             result.Data = 0;
             
             return result;

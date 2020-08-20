@@ -12,5 +12,7 @@ namespace Core.Entities
     public class Roulette : Entity
     {
         public bool Open { get; set; }
+        public int WinnerNumber { get; set; }
+        public ColorType Color { get; set; }
     }
 }

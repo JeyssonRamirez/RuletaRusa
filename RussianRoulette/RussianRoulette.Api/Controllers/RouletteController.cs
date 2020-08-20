@@ -62,8 +62,6 @@ namespace RussianRoulette.Api.Controllers
                 {
                     return BadRequest(result);
                 }
-
-
                 var appResult = _rouletteAppService.CreateRoulette(new Roulette
                 {
                     

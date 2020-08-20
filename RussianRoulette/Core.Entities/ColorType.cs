@@ -11,6 +11,7 @@ namespace Core.Entities
 {
     public enum ColorType
     {
+        NotDefined=0,
         Red=1,
         Black =2
     }
