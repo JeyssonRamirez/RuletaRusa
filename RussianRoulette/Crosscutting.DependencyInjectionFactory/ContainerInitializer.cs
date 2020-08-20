@@ -29,6 +29,7 @@ namespace Crosscutting.DependencyInjectionFactory
 
             #region Services
             services.AddScoped<IRussianRouletteAppService, RussianRouletteAppService>();
+            services.AddScoped<IBetAppService, BetAppService>();
             #endregion
 
             return services;

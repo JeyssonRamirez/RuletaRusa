@@ -35,25 +35,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementation", "Implement
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C4277579-C657-47A7-826B-4023468DC006}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Entities", "Core.Entities\Core.Entities.csproj", "{E2BD48FA-6733-4546-A55A-3B13B5B835AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Entities", "Core.Entities\Core.Entities.csproj", "{E2BD48FA-6733-4546-A55A-3B13B5B835AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.GlobalRepository", "Core.GlobalRepository\Core.GlobalRepository.csproj", "{AFD5AFBA-284C-4BEE-A9CD-9EBB58533F89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.GlobalRepository", "Core.GlobalRepository\Core.GlobalRepository.csproj", "{AFD5AFBA-284C-4BEE-A9CD-9EBB58533F89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.DataTransferObject", "Core.DataTransferObject\Core.DataTransferObject.csproj", "{2034EB1B-39A3-41FC-A9A9-D34D000FF8A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.DataTransferObject", "Core.DataTransferObject\Core.DataTransferObject.csproj", "{2034EB1B-39A3-41FC-A9A9-D34D000FF8A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Common.Definition", "Data.Common.Definition\Data.Common.Definition.csproj", "{015FA725-E74E-41D5-ADEB-AB10154FFA1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Common.Definition", "Data.Common.Definition\Data.Common.Definition.csproj", "{015FA725-E74E-41D5-ADEB-AB10154FFA1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crosscutting.Util", "Crosscutting.Util\Crosscutting.Util.csproj", "{E5C7A012-92A4-4DD5-AA19-3889954193F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crosscutting.Util", "Crosscutting.Util\Crosscutting.Util.csproj", "{E5C7A012-92A4-4DD5-AA19-3889954193F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Definition", "Application.Definition\Application.Definition.csproj", "{298FE5C1-DD53-4EC4-A0D4-79318397A483}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Definition", "Application.Definition\Application.Definition.csproj", "{298FE5C1-DD53-4EC4-A0D4-79318397A483}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Implementation", "Application.Implementation\Application.Implementation.csproj", "{24E59486-5E0E-4C22-B171-F875AD8F286A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Implementation", "Application.Implementation\Application.Implementation.csproj", "{24E59486-5E0E-4C22-B171-F875AD8F286A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RussianRoulette.Api", "RussianRoulette.Api\RussianRoulette.Api.csproj", "{EF4BAB8F-B35F-4763-BFC1-8DEC92C9E650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RussianRoulette.Api", "RussianRoulette.Api\RussianRoulette.Api.csproj", "{EF4BAB8F-B35F-4763-BFC1-8DEC92C9E650}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crosscutting.DependencyInjectionFactory", "Crosscutting.DependencyInjectionFactory\Crosscutting.DependencyInjectionFactory.csproj", "{AD299721-24F0-418C-92E5-EECD10AC6DEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crosscutting.DependencyInjectionFactory", "Crosscutting.DependencyInjectionFactory\Crosscutting.DependencyInjectionFactory.csproj", "{AD299721-24F0-418C-92E5-EECD10AC6DEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Common.Implementation.MongoDb", "Data.Common.Implementation.MongoDb\Data.Common.Implementation.MongoDb.csproj", "{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Common.Implementation.MongoDb", "Data.Common.Implementation.MongoDb\Data.Common.Implementation.MongoDb.csproj", "{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Provider.RedisDb", "DataAccess.Provider.RedisDb\DataAccess.Provider.RedisDb.csproj", "{EC1CCB8D-C9BB-4A70-A141-8993FD35DDD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +103,10 @@ Global
 		{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC1CCB8D-C9BB-4A70-A141-8993FD35DDD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1CCB8D-C9BB-4A70-A141-8993FD35DDD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1CCB8D-C9BB-4A70-A141-8993FD35DDD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1CCB8D-C9BB-4A70-A141-8993FD35DDD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +131,7 @@ Global
 		{EF4BAB8F-B35F-4763-BFC1-8DEC92C9E650} = {0297F4A5-35E1-4DF5-AEC6-831F338BA1FE}
 		{AD299721-24F0-418C-92E5-EECD10AC6DEA} = {38CC6DA4-B821-4F25-A9A0-1D2A775ADCEC}
 		{9D7987FF-EB48-4FCF-B29E-CF7B58FCDF5D} = {1C29252E-F129-45EE-9F01-65470985FB7B}
+		{EC1CCB8D-C9BB-4A70-A141-8993FD35DDD3} = {432A8B9E-D081-4045-BE03-A43B740BC3A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {926A4206-7934-4AB5-89FC-8CDD81BF1B82}

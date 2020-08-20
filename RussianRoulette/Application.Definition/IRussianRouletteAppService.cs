@@ -8,5 +8,6 @@ namespace Application.Definition
     {
         BaseApiResult GetAll();
         CreateRouletteResult CreateRoulette(Roulette roulette);
+        CreateRouletteResult OpenRoulette(long rouletteId);
     }
 }

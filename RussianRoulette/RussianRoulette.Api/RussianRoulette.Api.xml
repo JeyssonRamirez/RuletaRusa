@@ -21,6 +21,18 @@
             <param name="services"></param>
             <returns></returns>
         </member>
+        <member name="T:RussianRoulette.Api.Controllers.BetController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.BetController.MakeBet(RussianRoulette.Api.Model.Bet.MakeBetModel,System.Int64)">
+            <summary>
+            Register Roulette
+            </summary> 
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:RussianRoulette.Api.Controllers.CommonController">
             <summary>
             base Controller
@@ -43,6 +55,18 @@
             </summary> 
             <param name="model"></param>
             <returns></returns>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.RouletteController.OpenRoulette(RussianRoulette.Api.Model.OpenRouletteModel)">
+            <summary>
+            Open Roulette
+            </summary> 
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RussianRoulette.Api.Model.Bet.MakeBetModel">
+            <summary>
+            Make Bet Model
+            </summary>
         </member>
         <member name="F:RussianRoulette.Api.Startup.Configuration">
             <summary>

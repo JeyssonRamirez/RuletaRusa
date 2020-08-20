@@ -11,9 +11,9 @@ using RussianRoulette.Api.Model;
 namespace RussianRoulette.Api.Controllers
 {
     /// <summary>
-    /// Roulette
-    /// </summary>
-    [ApiController]
+        /// Roulette
+        /// </summary>
+        [ApiController]
     [Route("[controller]")]
     public class RouletteController : CommonController
     {
@@ -66,7 +66,7 @@ namespace RussianRoulette.Api.Controllers
 
                 var appResult = _rouletteAppService.CreateRoulette(new Roulette
                 {
-                    Size = model.Size
+                    
                 });
                 if (appResult.Success)
                 {
@@ -83,6 +83,49 @@ namespace RussianRoulette.Api.Controllers
                 return StatusCode(500,
                     new BaseApiResponse
                     { Code = 500, Message = ex.InnerException != null ? ex.InnerException.Message : ex.Message });
+            }
+        }
+
+
+        /// <summary>
+        /// Open Roulette
+        /// </summary> 
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("/Open")]
+        [ProducesResponseType(typeof(HttpStatusCode), 200)]
+        [ProducesResponseType(400, Type = typeof(ApiBadResponse))]
+        public async Task<IActionResult> OpenRoulette([FromBody] OpenRouletteModel model)
+        {
+
+            var result = new BaseApiResponse();
+            try
+            {
+
+                ValidateModel(model, result);
+                if (result.Code == (int)HttpStatusCode.BadRequest)
+                {
+                    return BadRequest(result);
+                }
+
+
+                var appResult = _rouletteAppService.OpenRoulette(model.Id);
+                if (appResult.Success)
+                {
+                    return Ok(appResult.Data);
+                }
+
+                return BadRequest(appResult);
+
+                //return Ok(result);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500,
+                    new BaseApiResponse
+                        { Code = 500, Message = ex.InnerException != null ? ex.InnerException.Message : ex.Message });
             }
         }
     }

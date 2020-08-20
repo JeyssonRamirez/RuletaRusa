@@ -1,40 +1,32 @@
 ﻿//   -----------------------------------------------------------------------
-//   <copyright file=Class1.cs company="Jeysson Ramirez">
+//   <copyright file=BetAppService.cs company="Jeysson Ramirez">
 //       Copyright (c) Jeysson Ramirez Todos los derechos reservados.
 //   </copyright>
 //   <author>Jeysson Stevens  Ramirez </author>
-//   <Date>  2020 -08-20  - 11:48</Date>
-//   <Update> 2020-08-20 - 11:59</Update>
+//   <Date>  2020 -08-20  - 16:49</Date>
+//   <Update> 2020-08-20 - 16:49</Update>
 //   -----------------------------------------------------------------------
-
-#region
 
 using System;
 using Application.Definition;
 using Core.DataTransferObject;
 using Core.Entities;
 
-#endregion
-
 namespace Application.Implementation
 {
-    public class RussianRouletteAppService : IRussianRouletteAppService
+    public class BetAppService : IBetAppService
     {
         public BaseApiResult GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public CreateRouletteResult CreateRoulette(Roulette roulette)
+        public CreateRouletteResult RegisterBet(Bet bet)
         {
-            roulette.Open = false;
-            var result = new CreateRouletteResult();
-            result.Data = 0;
-            
-            return result;
+            throw new NotImplementedException();
         }
 
-        public CreateRouletteResult OpenRoulette(long rouletteId)
+        public CreateRouletteResult CloseBet(long rouletteId)
         {
             throw new NotImplementedException();
         }
