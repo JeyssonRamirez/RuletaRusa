@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RussianRoulette.Api</name>
+    </assembly>
+    <members>
+        <member name="T:RussianRoulette.Api.Common.Extensions.ApplicationBuilderExtensions">
+            <summary>
+            ApplicationBuilderExtensions
+            </summary>
+        </member>
+        <member name="T:RussianRoulette.Api.Common.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Extensions
+            </summary>
+        </member>
+        <member name="M:RussianRoulette.Api.Common.Extensions.ServiceCollectionExtensions.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add Swagger 
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="F:RussianRoulette.Api.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+    </members>
+</doc>
