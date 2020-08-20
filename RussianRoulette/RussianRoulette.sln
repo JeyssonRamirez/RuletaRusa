@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Definition", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Implementation", "Application.Implementation\Application.Implementation.csproj", "{24E59486-5E0E-4C22-B171-F875AD8F286A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RussianRoulette.Api", "RussianRoulette.Api\RussianRoulette.Api.csproj", "{EF4BAB8F-B35F-4763-BFC1-8DEC92C9E650}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{24E59486-5E0E-4C22-B171-F875AD8F286A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24E59486-5E0E-4C22-B171-F875AD8F286A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24E59486-5E0E-4C22-B171-F875AD8F286A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF4BAB8F-B35F-4763-BFC1-8DEC92C9E650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF4BAB8F-B35F-4763-BFC1-8DEC92C9E650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF4BAB8F-B35F-4763-BFC1-8DEC92C9E650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF4BAB8F-B35F-4763-BFC1-8DEC92C9E650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +110,7 @@ Global
 		{E5C7A012-92A4-4DD5-AA19-3889954193F3} = {BC6FE0CF-C559-4A00-94A2-DC13942A698D}
 		{298FE5C1-DD53-4EC4-A0D4-79318397A483} = {524DE20F-8084-48BE-9C81-8D8931FC01C8}
 		{24E59486-5E0E-4C22-B171-F875AD8F286A} = {848F3398-2C8F-497C-83F1-AA9B8BDAF985}
+		{EF4BAB8F-B35F-4763-BFC1-8DEC92C9E650} = {0297F4A5-35E1-4DF5-AEC6-831F338BA1FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {926A4206-7934-4AB5-89FC-8CDD81BF1B82}
