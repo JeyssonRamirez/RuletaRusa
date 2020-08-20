@@ -12,6 +12,7 @@
 using System;
 using Application.Definition;
 using Core.DataTransferObject;
+using Core.Entities;
 
 #endregion
 
@@ -22,6 +23,13 @@ namespace Application.Implementation
         public BaseApiResult GetAll()
         {
             throw new NotImplementedException();
+        }
+
+        public CreateRouletteResult CreateRoulette(Roulette roulette)
+        {
+            var result = new CreateRouletteResult();
+            result.Data = 0;
+            return result;
         }
     }
 }

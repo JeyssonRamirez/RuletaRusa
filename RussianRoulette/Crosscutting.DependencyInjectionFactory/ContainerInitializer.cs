@@ -7,12 +7,33 @@
 //   <Update> 2020-08-20 - 11:55</Update>
 //   -----------------------------------------------------------------------
 
+using Application.Definition;
+using Application.Implementation;
+using Microsoft.Extensions.DependencyInjection;
 using Unity;
 
 namespace Crosscutting.DependencyInjectionFactory
 {
     public static class ContainerInitializer
     {
+        public static IServiceCollection AddApiDependencies(this IServiceCollection services)
+        {
+            
+            #region Croscutting
+
+            #endregion
+
+            #region injection Data Access
+
+            #endregion
+
+            #region Services
+            services.AddScoped<IRussianRouletteAppService, RussianRouletteAppService>();
+            #endregion
+
+            return services;
+        }
+
         public static void InitializeContainer(this IUnityContainer container)
         {
 
@@ -27,7 +48,7 @@ namespace Crosscutting.DependencyInjectionFactory
             //container.RegisterType<ITransactionAppService, TransactionAppService>();
             //container.RegisterType<IRateAppService, RateAppService>();
 
-
+            
         }
     }
 }
