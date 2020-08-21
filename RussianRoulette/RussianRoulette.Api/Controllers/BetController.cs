@@ -35,6 +35,20 @@ namespace RussianRoulette.Api.Controllers
             _betAppService = betAppService;
         }
 
+        [HttpGet]
+        [ProducesResponseType(typeof(HttpStatusCode), 200)]
+        [ProducesResponseType(400, Type = typeof(ApiBadResponse))]
+        public async Task<IActionResult> Get()
+        {
+            var appResult = await _betAppService.GetAll();
+            if (appResult.Success)
+            {
+                return Ok(appResult.Data);
+            }
+
+            return BadRequest(appResult);
+        }
+
         /// <summary>
         /// Register Roulette
         /// </summary> 
@@ -57,13 +71,14 @@ namespace RussianRoulette.Api.Controllers
                 }
 
 
-                var appResult = _betAppService.RegisterBet(new Bet
+                var appResult =await _betAppService.RegisterBet(new Bet
                 {
-
+                    Id =  Guid.NewGuid(),
+                    RouletteId =  model.RouletteId,
                     Color = model.Color,
                     Amount = model.Amount,
                     Number = model.Number,
-                    UserId = userId
+                    UserId = userId,
                 });
                 if (appResult.Success)
                 {

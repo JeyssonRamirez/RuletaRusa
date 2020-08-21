@@ -8,22 +8,63 @@
 //   -----------------------------------------------------------------------
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Application.Definition;
 using Core.DataTransferObject;
 using Core.Entities;
+using Core.GlobalRepository;
 
 namespace Application.Implementation
 {
     public class BetAppService : IBetAppService
     {
-        public BaseApiResult GetAll()
+
+        private readonly IRouletteRepository _rouletteRepository;
+        private readonly IBetRepository _betRepository;
+
+        public BetAppService(IRouletteRepository rouletteRepository, IBetRepository betRepository)
         {
-            throw new NotImplementedException();
+            _rouletteRepository = rouletteRepository;
+            _betRepository = betRepository;
         }
 
-        public CreateRouletteResult RegisterBet(Bet bet)
+        public async Task<GetAllBetResult> GetAll()
         {
-            throw new NotImplementedException();
+            var r = new GetAllBetResult();
+            var data = await _betRepository.GetAllBets();
+            r.Data = data;
+            return r;
+        }
+
+      
+
+        public async Task<CreateBetResult> RegisterBet(Bet bet)
+        {
+            CreateBetResult result = new CreateBetResult();
+
+            var roulette = await _rouletteRepository.GetRoulette(new Roulette
+            {
+                Id = bet.RouletteId
+            });
+            if (roulette == null)
+            {
+                result.Success = false;
+                result.Message = "Roulette not found";
+                return result;
+            }
+
+            if (!roulette.Open)
+            {
+                result.Success = false;
+                result.Message = "Roulette not Open,Please First Open the Roulette";
+                return result;
+            }
+
+            await _betRepository.AddBet(bet);
+            result.Success = true;
+            return result;
+
         }
 
         public CreateRouletteResult CloseBet(long rouletteId)

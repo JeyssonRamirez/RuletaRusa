@@ -7,11 +7,13 @@
 //   <Update> 2020-08-20 - 17:09</Update>
 //   -----------------------------------------------------------------------
 
+using System;
+
 namespace Core.Entities
 {
     public class Bet :Entity
     {
-        private long RouletteId { get; set; }
+        public Guid RouletteId { get; set; }
         public long UserId { get; set; }
         public ColorType Color { get; set; }
         public int Number { get; set; }

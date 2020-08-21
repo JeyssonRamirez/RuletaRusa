@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.GlobalRepository;
@@ -28,6 +30,25 @@ namespace DataAccess.Provider.RedisDb
         {
             var r = await GetOne(data);
             return r;
+        }
+
+        public  Task<List<Bet>> GetAllBets()
+        {
+            var list = new List<Bet>();
+            var rouletteKey = GetKeyList().Where(s => s.Contains("Bet")).ToList();
+
+            foreach (var key in rouletteKey)
+            {
+                list.Add(Get<Bet>(key));
+            }
+
+            return Task.FromResult(list);
+        }
+
+        public async Task<List<Bet>> GetAllBetsByRoulette(Guid rouletteId)
+        {
+            var bets=await GetAllBets();
+            return bets?.Where(s => s.RouletteId == rouletteId).ToList();
         }
     }
 }

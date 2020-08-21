@@ -7,9 +7,6 @@
 //   <Update> 2020-08-20 - 11:57</Update>
 //   -----------------------------------------------------------------------
 
-using System.Collections.Generic;
-using Core.Entities;
-
 namespace Core.DataTransferObject
 {
     public class BaseApiResult
@@ -19,12 +16,6 @@ namespace Core.DataTransferObject
         public object Data { set; get; }
     }
 
-
-    public class GetAllRouletteResult : BaseApiResult
-    {
-
-        public new List<Roulette> Data { set; get; }
-    }
 
     public class ClosedBetResult : BaseApiResult
     {

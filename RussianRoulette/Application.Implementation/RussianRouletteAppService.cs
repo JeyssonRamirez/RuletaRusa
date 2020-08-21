@@ -15,6 +15,7 @@ using Application.Definition;
 using Core.DataTransferObject;
 using Core.Entities;
 using Core.GlobalRepository;
+using Microsoft.VisualBasic;
 
 #endregion
 
@@ -63,6 +64,7 @@ namespace Application.Implementation
             current = await _rouletteRepository.UpdateRoulette(current);
             var result = new OpenRouletteResult();
             result.Data = true;
+            result.Success = true;
             return result;
 
         }

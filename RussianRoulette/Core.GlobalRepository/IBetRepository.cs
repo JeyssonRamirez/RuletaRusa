@@ -7,6 +7,8 @@
 //   <Update> 2020-08-20 - 17:41</Update>
 //   -----------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.Entities;
 
@@ -16,5 +18,7 @@ namespace Core.GlobalRepository
     {
         Task<Bet> AddBet(Bet data);
         Task<Bet> GetBet(Bet data);
+        Task<List<Bet>> GetAllBets();
+        Task<List<Bet>> GetAllBetsByRoulette(Guid rouletteId);
     }
 }

@@ -19,11 +19,8 @@ using Microsoft.Extensions.Options;
 
 namespace DataAccess.Provider.RedisDb
 {
-
-
     public class RouletteRepositoryRedis : RedisUnitOfWork, IRouletteRepository
     {
-
 
         public RouletteRepositoryRedis(IOptions<GeneralOptions> options) : base(options)
         {
@@ -31,7 +28,7 @@ namespace DataAccess.Provider.RedisDb
 
         public Task<List<Roulette>> GetAllRoulette()
         {
-            List<Roulette> list = new List<Roulette>();
+            var list = new List<Roulette>();
             var rouletteKey = GetKeyList().Where(s => s.Contains("Roulette")).ToList();
 
             foreach (var key in rouletteKey)
@@ -65,11 +62,14 @@ namespace DataAccess.Provider.RedisDb
 
             Mapper(data, r);
 
-            if (await AddEntity(r))
+            if (await DeleteRoulette(data.Id))
             {
-                return data;
+                if (await AddEntity(r))
+                {
+                    return data;
+                }
             }
-            throw new Exception("Algo paso en el Insercion ");
+            throw new Exception("Algo paso en el Update");
 
         }
 

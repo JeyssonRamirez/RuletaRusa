@@ -78,8 +78,6 @@ namespace RussianRoulette.Api.Controllers
 
                 return BadRequest(appResult);
 
-                //return Ok(result);
-
             }
             catch (Exception ex)
             {

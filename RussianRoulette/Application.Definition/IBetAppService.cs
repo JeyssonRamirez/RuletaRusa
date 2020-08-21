@@ -7,6 +7,7 @@
 //   <Update> 2020-08-20 - 16:49</Update>
 //   -----------------------------------------------------------------------
 
+using System.Threading.Tasks;
 using Core.DataTransferObject;
 using Core.Entities;
 
@@ -14,8 +15,8 @@ namespace Application.Definition
 {
     public interface IBetAppService
     {
-        BaseApiResult GetAll();
-        CreateRouletteResult RegisterBet(Bet bet);
+        Task<GetAllBetResult> GetAll() ;
+        Task<CreateBetResult> RegisterBet(Bet bet);
         CreateRouletteResult CloseBet(long rouletteId);
     }
 }

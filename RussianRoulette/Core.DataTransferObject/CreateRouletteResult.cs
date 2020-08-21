@@ -15,4 +15,9 @@ namespace Core.DataTransferObject
     {
         public new Guid Data { set; get; }
     }
+
+    public class CreateBetResult : BaseApiResult
+    {
+        public new Guid Data { set; get; }
+    }
 }
