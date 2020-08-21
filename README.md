@@ -6,45 +6,36 @@
 
 ## Structure Project
 
-1. 1.Presentation
+1. Presentation
 
-Api
+- Api
+- RussianRoulette.Api
+- Using (Net Core 3.1 + Swagger)
 
-RussianRoulette.Api
+1. Application
 
-Using (Net Core 3.1 + Swagger)
+- Definition
+- Implementation
+- Test
 
-1. 2.Application
+1. Core
 
-Definition
+- Dtos
+- Entities
+- Repository
 
-Implementation
+1. Data
 
-Test
+- Common
+- Providers
+- RedisLabs ([https://app.redislabs.com](https://app.redislabs.com/))
+- StackExchange.Redis ([https://stackexchange.github.io/StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis))
 
-1. 3.Core
+1. Crosscutting
+2. Testing
+3. IoC
 
-Dtos
-
-Entities
-
-Repository
-
-1. 4.Data
-
-Common
-
-Providers
-
-RedisLabs ([https://app.redislabs.com](https://app.redislabs.com/))
-
-StackExchange.Redis ([https://stackexchange.github.io/StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis))
-
-1. 5.Crosscutting
-2. 6.Testing
-3. 7.IoC
-
-Used patterns
+**Used patterns**
 
 1. Repository
 2. Facade
