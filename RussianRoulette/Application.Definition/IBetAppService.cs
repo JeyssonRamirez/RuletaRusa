@@ -7,6 +7,7 @@
 //   <Update> 2020-08-20 - 16:49</Update>
 //   -----------------------------------------------------------------------
 
+using System;
 using System.Threading.Tasks;
 using Core.DataTransferObject;
 using Core.Entities;
@@ -17,6 +18,6 @@ namespace Application.Definition
     {
         Task<GetAllBetResult> GetAll() ;
         Task<CreateBetResult> RegisterBet(Bet bet);
-        CreateRouletteResult CloseBet(long rouletteId);
+        Task<ClosedBetResult> CloseBet(Guid rouletteId);
     }
 }

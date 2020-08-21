@@ -70,6 +70,11 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="T:RussianRoulette.Api.Model.Bet.CloseBetsModel">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:RussianRoulette.Api.Model.Bet.MakeBetModel">
             <summary>
             Make Bet Model

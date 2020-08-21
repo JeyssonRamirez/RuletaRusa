@@ -32,12 +32,4 @@ namespace RussianRoulette.Api.Model.Bet
         public decimal Amount { get; set; }
 
     }
-
-     public class CloseBetsModel
-    {
-        [Required]
-        [Range(1, long.MaxValue, ErrorMessage = "The field {0} must be greater than {1}.")]
-        public long RouletteId { get; set; }
-
-    }
 }

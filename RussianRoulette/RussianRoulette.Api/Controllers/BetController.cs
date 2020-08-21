@@ -121,7 +121,7 @@ namespace RussianRoulette.Api.Controllers
                 }
 
 
-                var appResult = _betAppService.CloseBet(model.RouletteId);
+                var appResult =await _betAppService.CloseBet(model.RouletteId);
                 if (appResult.Success)
                 {
                     return Ok(appResult.Data);
