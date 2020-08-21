@@ -1,22 +1,16 @@
 ﻿//   -----------------------------------------------------------------------
-//   <copyright file=BaseApiResponse.cs company="Jeysson Ramirez">
+//   <copyright file=RegisterRouletteModel.cs company="Jeysson Ramirez">
 //       Copyright (c) Jeysson Ramirez Todos los derechos reservados.
 //   </copyright>
 //   <author>Jeysson Stevens  Ramirez </author>
-//   <Date>  2020 -08-20  - 14:39</Date>
-//   <Update> 2020-08-20 - 14:39</Update>
+//   <Date>  2020 -08-20  - 17:07</Date>
+//   <Update> 2020-08-20 - 17:07</Update>
 //   -----------------------------------------------------------------------
-
-using System;
-using Microsoft.AspNetCore.Mvc;
 
 namespace RussianRoulette.Api.Model
 {
-    public class BaseApiResponse
+    public class RegisterRouletteModel
     {
-
-        public int Code { get; set; }
-        public string Message { get; set; }
-
+        public int Size { get; set; }
     }
 }

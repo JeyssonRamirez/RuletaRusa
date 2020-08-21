@@ -11,6 +11,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Application.Definition\Application.Definition.csproj" />
     <ProjectReference Include="..\Application.Implementation\Application.Implementation.csproj" />
+    <ProjectReference Include="..\Core.GlobalRepository\Core.GlobalRepository.csproj" />
+    <ProjectReference Include="..\DataAccess.Provider.RedisDb\DataAccess.Provider.RedisDb.csproj" />
   </ItemGroup>
 
   <ItemGroup>

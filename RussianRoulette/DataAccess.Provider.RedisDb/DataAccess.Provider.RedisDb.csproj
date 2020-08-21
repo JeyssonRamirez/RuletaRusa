@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BeetleX.Redis" Version="0.9.7.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core.GlobalRepository\Core.GlobalRepository.csproj" />
+    <ProjectReference Include="..\Data.Common.Definition\Data.Common.Definition.csproj" />
+    <ProjectReference Include="..\Data.Common.Implementation.Redis\Data.Common.Implementation.Redis.csproj" />
+  </ItemGroup>
+
+</Project>
