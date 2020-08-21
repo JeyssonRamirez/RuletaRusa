@@ -12,13 +12,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.DataTransferObject;
 using Core.Entities;
+using Crosscutting.Util;
 using Data.Common.Definition;
+using Microsoft.Extensions.Options;
 
 namespace Data.Common.Implementation.Redis
 {
     public class RedisUnitOfWork : ContextRedis, IUnitOfWork
     {
-        public RedisUnitOfWork(RedisSettings settings) : base(settings)
+        public RedisUnitOfWork(IOptions<GeneralOptions> options) : base(options)
         {
         }
 

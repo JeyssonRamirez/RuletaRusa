@@ -9,6 +9,7 @@
 
 using System;
 using System.IO;
+using Crosscutting.Util;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -23,7 +24,7 @@ namespace RussianRoulette.Api.Common.Extensions
     {
         public static IServiceCollection AddOptions(this IServiceCollection services, IConfiguration configuration)
         {
-            //services.Configure<GeneralOptions>(configuration.GetSection("GeneralOptions"));
+            services.Configure<GeneralOptions>(configuration.GetSection("GeneralOptions"));
             
             return services;
         }

@@ -3,11 +3,11 @@
 //       Copyright (c) Jeysson Ramirez Todos los derechos reservados.
 //   </copyright>
 //   <author>Jeysson Stevens  Ramirez </author>
-//   <Date>  2020 -08-20  - 18:35</Date>
-//   <Update> 2020-08-20 - 18:35</Update>
+//   <Date>  2020 -08-20  - 19:04</Date>
+//   <Update> 2020-08-20 - 19:04</Update>
 //   -----------------------------------------------------------------------
 
-namespace Data.Common.Implementation.Redis
+namespace Crosscutting.Util
 {
     public class RedisSettings
     {

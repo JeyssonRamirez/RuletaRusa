@@ -62,7 +62,7 @@ namespace RussianRoulette.Api.Controllers
                 {
                     return BadRequest(result);
                 }
-                var appResult = _rouletteAppService.CreateRoulette(new Roulette
+                var appResult =await _rouletteAppService.CreateRoulette(new Roulette
                 {
                     
                 });
@@ -108,7 +108,7 @@ namespace RussianRoulette.Api.Controllers
                 }
 
 
-                var appResult = _rouletteAppService.OpenRoulette(model.Id);
+                var appResult =await _rouletteAppService.OpenRoulette(model.Id);
                 if (appResult.Success)
                 {
                     return Ok(appResult.Data);

@@ -8,15 +8,17 @@
 //   -----------------------------------------------------------------------
 
 using BeetleX.Redis;
+using Crosscutting.Util;
+using Microsoft.Extensions.Options;
 
 namespace Data.Common.Implementation.Redis
 {
     public class ContextRedis : RedisDB
     {
         private readonly RedisDB _bd; 
-        public ContextRedis(RedisSettings settings)
+        public ContextRedis(IOptions<GeneralOptions> options)
         {
-            var settings1 = settings;
+            var settings1 = options.Value.RedisSettings;
 
             _bd = new RedisDB(1);
             _bd.DataFormater = new JsonFormater();

@@ -11,7 +11,9 @@ using System;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.GlobalRepository;
+using Crosscutting.Util;
 using Data.Common.Implementation.Redis;
+using Microsoft.Extensions.Options;
 
 namespace DataAccess.Provider.RedisDb
 {
@@ -21,7 +23,7 @@ namespace DataAccess.Provider.RedisDb
     {
        
 
-        public RouletteRepositoryRedis(RedisSettings settings) : base(settings)
+        public RouletteRepositoryRedis(IOptions<GeneralOptions> options) : base(options)
         {
         }
 
