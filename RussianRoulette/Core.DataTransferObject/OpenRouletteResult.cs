@@ -11,7 +11,10 @@ namespace Core.DataTransferObject
 {
     public class OpenRouletteResult : BaseApiResult
     {
-        
+        public new bool Data { set; get; }
+    }
+    public class DeleteRouletteResult : BaseApiResult
+    {
         public new bool Data { set; get; }
     }
 }

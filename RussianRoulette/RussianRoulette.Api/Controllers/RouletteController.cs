@@ -131,5 +131,34 @@ namespace RussianRoulette.Api.Controllers
                     { Code = 500, Message = ex.InnerException != null ? ex.InnerException.Message : ex.Message });
             }
         }
+
+        [HttpDelete]
+        [ProducesResponseType(typeof(HttpStatusCode), 200)]
+        [ProducesResponseType(400, Type = typeof(ApiBadResponse))]
+        public async Task<IActionResult> DeleteRoulette([FromQuery] Guid id)
+        {
+
+            var result = new BaseApiResponse();
+            try
+            {
+
+                var appResult = await _rouletteAppService.DeleteRoulette(id);
+                if (appResult.Success)
+                {
+                    return Ok(appResult);
+                }
+
+                return BadRequest(appResult);
+
+                //return Ok(result);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500,
+                    new BaseApiResponse
+                    { Code = 500, Message = ex.InnerException != null ? ex.InnerException.Message : ex.Message });
+            }
+        }
     }
 }

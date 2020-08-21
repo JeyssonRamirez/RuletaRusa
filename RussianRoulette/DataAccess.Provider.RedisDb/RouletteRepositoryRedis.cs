@@ -23,7 +23,7 @@ namespace DataAccess.Provider.RedisDb
 
     public class RouletteRepositoryRedis : RedisUnitOfWork, IRouletteRepository
     {
-       
+
 
         public RouletteRepositoryRedis(IOptions<GeneralOptions> options) : base(options)
         {
@@ -31,8 +31,8 @@ namespace DataAccess.Provider.RedisDb
 
         public Task<List<Roulette>> GetAllRoulette()
         {
-             List<Roulette>  list = new List<Roulette>();
-             var rouletteKey = GetKeyList().Where(s=>s.Contains("Roulette")).ToList();
+            List<Roulette> list = new List<Roulette>();
+            var rouletteKey = GetKeyList().Where(s => s.Contains("Roulette")).ToList();
 
             foreach (var key in rouletteKey)
             {
@@ -55,7 +55,7 @@ namespace DataAccess.Provider.RedisDb
 
         public async Task<Roulette> GetRoulette(Roulette data)
         {
-            var r=await GetOne(data);
+            var r = await GetOne(data);
             return r;
         }
 
@@ -71,6 +71,11 @@ namespace DataAccess.Provider.RedisDb
             }
             throw new Exception("Algo paso en el Insercion ");
 
+        }
+
+        public Task<bool> DeleteRoulette(Guid idGuid)
+        {
+            return RemoveEntity(new Roulette { Id = idGuid });
         }
     }
 }

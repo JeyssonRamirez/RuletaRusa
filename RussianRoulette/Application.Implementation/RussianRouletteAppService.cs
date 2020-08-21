@@ -58,18 +58,21 @@ namespace Application.Implementation
         public async Task<OpenRouletteResult> OpenRoulette(Guid rouletteId)
         {
             var current = await _rouletteRepository.GetRoulette(new Roulette { Id = rouletteId });
-
-
             current.Open = true;
             current.Status = StatusType.Active;
             current = await _rouletteRepository.UpdateRoulette(current);
-
             var result = new OpenRouletteResult();
-
             result.Data = true;
-
             return result;
 
+        }
+
+        public async Task<DeleteRouletteResult> DeleteRoulette(Guid rouletteId)
+        {
+            var result = new DeleteRouletteResult();
+            result.Data = await _rouletteRepository.DeleteRoulette(rouletteId);
+            result.Success = result.Data;
+            return result;
         }
     }
 }

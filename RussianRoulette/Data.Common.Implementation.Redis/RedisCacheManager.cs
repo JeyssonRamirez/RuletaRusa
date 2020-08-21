@@ -63,9 +63,9 @@ namespace Data.Common.Implementation.Redis
             return RedisCache.KeyExists(key);
         }
 
-        public void Remove(string key)
+        public bool Remove(string key)
         {
-            RedisCache.KeyDelete(key);
+           return RedisCache.KeyDelete(key);
         }
 
         public void RemoveByPattern(string pattern)

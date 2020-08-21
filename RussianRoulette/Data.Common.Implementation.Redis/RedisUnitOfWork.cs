@@ -61,8 +61,7 @@ namespace Data.Common.Implementation.Redis
 
         public async Task<bool> RemoveEntity<T>(T item) where T : Entity
         {
-            Remove($"{item.GetType().Name}[{item.Id.ToString()}]");
-            return true;
+            return Remove($"{item.GetType().Name}[{item.Id.ToString()}]");
         }
 
         public async Task<T> GetOne<T>(T item) where T : Entity
