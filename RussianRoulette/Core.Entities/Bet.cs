@@ -18,5 +18,6 @@ namespace Core.Entities
         public ColorType Color { get; set; }
         public int Number { get; set; }
         public decimal Amount { get; set; }
+        public bool Winner { get; set; }
     }
 }

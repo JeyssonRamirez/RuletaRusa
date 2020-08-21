@@ -7,6 +7,9 @@
 //   <Update> 2020-08-20 - 11:57</Update>
 //   -----------------------------------------------------------------------
 
+using System.Collections.Generic;
+using Core.Entities;
+
 namespace Core.DataTransferObject
 {
     public class BaseApiResult
@@ -20,7 +23,7 @@ namespace Core.DataTransferObject
     public class ClosedBetResult : BaseApiResult
     {
 
-        public new int Data { set; get; }
+        public new List<Bet> Data { set; get; }
     }
 
 }

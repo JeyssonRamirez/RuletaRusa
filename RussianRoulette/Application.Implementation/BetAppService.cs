@@ -8,7 +8,10 @@
 //   -----------------------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Application.Definition;
 using Core.DataTransferObject;
@@ -37,7 +40,7 @@ namespace Application.Implementation
             return r;
         }
 
-      
+
 
         public async Task<CreateBetResult> RegisterBet(Bet bet)
         {
@@ -67,9 +70,58 @@ namespace Application.Implementation
 
         }
 
-        public CreateRouletteResult CloseBet(long rouletteId)
+        private void UpdateBets(List<Bet> bets, Roulette roulette)
         {
-            throw new NotImplementedException();
+            foreach (var bet in bets.Where(bet => bet.Number == roulette.WinnerNumber && bet.Color == roulette.Color))
+            {
+                bet.Winner = true;
+            }
+        }
+
+        private async Task<Roulette> RunRoulette(Roulette roulette)
+        {
+            roulette.WinnerNumber = new Random().Next(0, 36);
+            roulette.Color = (ColorType)new Random().Next(1, 2);
+            return await _rouletteRepository.UpdateRoulette(roulette);
+        }
+
+        public async Task<ClosedBetResult> CloseBet(Guid rouletteId)
+        {
+            var result = new ClosedBetResult();
+            var roulette = await _rouletteRepository.GetRoulette(new Roulette
+            {
+                Id = rouletteId
+            });
+            if (roulette == null)
+            {
+                result.Success = false;
+                result.Message = "Roulette not found";
+                return result;
+            }
+            if (!roulette.Open)
+            {
+                result.Success = false;
+                result.Message = "Roulette not Open,Please First Open the Roulette";
+                return result;
+            }
+
+            if (roulette.WinnerNumber != -1)
+            {
+                result.Success = false;
+                result.Message = $"Roulette Already Played, the Winner is { roulette.WinnerNumber},With color {roulette.Color}";
+                return result;
+            }
+            await RunRoulette(roulette);
+
+
+            var bets = await _betRepository.GetAllBetsByRoulette(rouletteId);
+            //Change Winners
+            UpdateBets(bets, roulette);
+
+            result.Data = bets;
+            result.Success = true;
+
+            return result;
         }
     }
 }
