@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using Application.Definition;
@@ -21,6 +20,11 @@ namespace RussianRoulette.Api.Controllers
 
         private readonly ILogger<RouletteController> _logger;
         private readonly IRussianRouletteAppService _rouletteAppService;
+        /// <summary>
+        /// Controller Roulette
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="rouletteAppService"></param>
         public RouletteController(ILogger<RouletteController> logger, IRussianRouletteAppService rouletteAppService)
         {
             _logger = logger;
@@ -29,7 +33,7 @@ namespace RussianRoulette.Api.Controllers
         }
 
         /// <summary>
-        /// 
+        ///  Get All Roulette
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -89,7 +93,7 @@ namespace RussianRoulette.Api.Controllers
 
 
         /// <summary>
-        /// Open Roulette
+        /// Open Roulette for Bets
         /// </summary> 
         /// <param name="model"></param>
         /// <returns></returns>
@@ -130,6 +134,12 @@ namespace RussianRoulette.Api.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Delete Roulette
+        /// </summary> 
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [ProducesResponseType(typeof(HttpStatusCode), 200)]
         [ProducesResponseType(400, Type = typeof(ApiBadResponse))]

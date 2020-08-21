@@ -65,6 +65,7 @@ namespace Application.Implementation
             }
 
             await _betRepository.AddBet(bet);
+            result.Data = bet.Id;
             result.Success = true;
             return result;
 

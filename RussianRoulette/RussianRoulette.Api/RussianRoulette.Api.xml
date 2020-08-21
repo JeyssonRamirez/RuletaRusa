@@ -23,19 +23,25 @@
         </member>
         <member name="T:RussianRoulette.Api.Controllers.BetController">
             <summary>
-            
+            Bet Controller
             </summary>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.BetController.Get">
+            <summary>
+            Get All Bets
+            </summary> 
+            <returns></returns>
         </member>
         <member name="M:RussianRoulette.Api.Controllers.BetController.MakeBet(RussianRoulette.Api.Model.Bet.MakeBetModel,System.Int64)">
             <summary>
-            Register Roulette
+            Make Bet for Roulette
             </summary> 
             <param name="model"></param>
             <returns></returns>
         </member>
         <member name="M:RussianRoulette.Api.Controllers.BetController.CloseBet(RussianRoulette.Api.Model.Bet.CloseBetsModel)">
             <summary>
-            Close Bets
+            Close Bet for the Roulette ( Run Roulette)
             </summary> 
             <param name="model"></param>
             <returns></returns>
@@ -50,9 +56,16 @@
             Roulette
             </summary>
         </member>
+        <member name="M:RussianRoulette.Api.Controllers.RouletteController.#ctor(Microsoft.Extensions.Logging.ILogger{RussianRoulette.Api.Controllers.RouletteController},Application.Definition.IRussianRouletteAppService)">
+            <summary>
+            Controller Roulette
+            </summary>
+            <param name="logger"></param>
+            <param name="rouletteAppService"></param>
+        </member>
         <member name="M:RussianRoulette.Api.Controllers.RouletteController.Get">
             <summary>
-            
+             Get All Roulette
             </summary>
             <returns></returns>
         </member>
@@ -65,9 +78,16 @@
         </member>
         <member name="M:RussianRoulette.Api.Controllers.RouletteController.OpenRoulette(RussianRoulette.Api.Model.OpenRouletteModel)">
             <summary>
-            Open Roulette
+            Open Roulette for Bets
             </summary> 
             <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.RouletteController.DeleteRoulette(System.Guid)">
+            <summary>
+            Delete Roulette
+            </summary> 
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="T:RussianRoulette.Api.Model.Bet.CloseBetsModel">

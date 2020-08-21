@@ -20,7 +20,7 @@ using RussianRoulette.Api.Model.Bet;
 namespace RussianRoulette.Api.Controllers
 {
     /// <summary>
-    /// 
+    /// Bet Controller
     /// </summary>
     [ApiController]
     [Route("[controller]")]
@@ -34,6 +34,11 @@ namespace RussianRoulette.Api.Controllers
             _logger = logger;
             _betAppService = betAppService;
         }
+
+        /// <summary>
+        /// Get All Bets
+        /// </summary> 
+        /// <returns></returns>
 
         [HttpGet]
         [ProducesResponseType(typeof(HttpStatusCode), 200)]
@@ -50,7 +55,7 @@ namespace RussianRoulette.Api.Controllers
         }
 
         /// <summary>
-        /// Register Roulette
+        /// Make Bet for Roulette
         /// </summary> 
         /// <param name="model"></param>
         /// <returns></returns>
@@ -71,10 +76,10 @@ namespace RussianRoulette.Api.Controllers
                 }
 
 
-                var appResult =await _betAppService.RegisterBet(new Bet
+                var appResult = await _betAppService.RegisterBet(new Bet
                 {
-                    Id =  Guid.NewGuid(),
-                    RouletteId =  model.RouletteId,
+                    Id = Guid.NewGuid(),
+                    RouletteId = model.RouletteId,
                     Color = model.Color,
                     Amount = model.Amount,
                     Number = model.Number,
@@ -99,7 +104,7 @@ namespace RussianRoulette.Api.Controllers
         }
 
         /// <summary>
-        /// Close Bets
+        /// Close Bet for the Roulette ( Run Roulette)
         /// </summary> 
         /// <param name="model"></param>
         /// <returns></returns>
@@ -121,7 +126,7 @@ namespace RussianRoulette.Api.Controllers
                 }
 
 
-                var appResult =await _betAppService.CloseBet(model.RouletteId);
+                var appResult = await _betAppService.CloseBet(model.RouletteId);
                 if (appResult.Success)
                 {
                     return Ok(appResult.Data);
@@ -136,7 +141,7 @@ namespace RussianRoulette.Api.Controllers
             {
                 return StatusCode(500,
                     new BaseApiResponse
-                        { Code = 500, Message = ex.InnerException != null ? ex.InnerException.Message : ex.Message });
+                    { Code = 500, Message = ex.InnerException != null ? ex.InnerException.Message : ex.Message });
             }
         }
     }
