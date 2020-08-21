@@ -22,7 +22,7 @@ Structure
 --Common
 --Providers
 ----RedisLabs (https://app.redislabs.com/)
-
+----StackExchange.Redis (https://stackexchange.github.io/StackExchange.Redis/)
 5.Crosscutting
 6.Testing
 7.IoC
