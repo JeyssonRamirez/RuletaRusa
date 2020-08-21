@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RussianRoulette.Api</name>
+    </assembly>
+    <members>
+        <member name="T:RussianRoulette.Api.Common.Extensions.ApplicationBuilderExtensions">
+            <summary>
+            ApplicationBuilderExtensions
+            </summary>
+        </member>
+        <member name="T:RussianRoulette.Api.Common.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Extensions
+            </summary>
+        </member>
+        <member name="M:RussianRoulette.Api.Common.Extensions.ServiceCollectionExtensions.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add Swagger 
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RussianRoulette.Api.Controllers.BetController">
+            <summary>
+            Bet Controller
+            </summary>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.BetController.Get">
+            <summary>
+            Get All Bets
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.BetController.MakeBet(RussianRoulette.Api.Model.Bet.MakeBetModel,System.Int64)">
+            <summary>
+            Make Bet for Roulette
+            </summary> 
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.BetController.CloseBet(RussianRoulette.Api.Model.Bet.CloseBetsModel)">
+            <summary>
+            Close Bet for the Roulette ( Run Roulette)
+            </summary> 
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RussianRoulette.Api.Controllers.CommonController">
+            <summary>
+            base Controller
+            </summary>
+        </member>
+        <member name="T:RussianRoulette.Api.Controllers.RouletteController">
+            <summary>
+            Roulette
+            </summary>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.RouletteController.#ctor(Microsoft.Extensions.Logging.ILogger{RussianRoulette.Api.Controllers.RouletteController},Application.Definition.IRussianRouletteAppService)">
+            <summary>
+            Controller Roulette
+            </summary>
+            <param name="logger"></param>
+            <param name="rouletteAppService"></param>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.RouletteController.Get">
+            <summary>
+             Get All Roulette
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.RouletteController.Post(RussianRoulette.Api.Model.RegisterRouletteModel)">
+            <summary>
+            Register Roulette
+            </summary> 
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.RouletteController.OpenRoulette(RussianRoulette.Api.Model.OpenRouletteModel)">
+            <summary>
+            Open Roulette for Bets
+            </summary> 
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RussianRoulette.Api.Controllers.RouletteController.DeleteRoulette(System.Guid)">
+            <summary>
+            Delete Roulette
+            </summary> 
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RussianRoulette.Api.Model.Bet.CloseBetsModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RussianRoulette.Api.Model.Bet.MakeBetModel">
+            <summary>
+            Make Bet Model
+            </summary>
+        </member>
+        <member name="F:RussianRoulette.Api.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+    </members>
+</doc>

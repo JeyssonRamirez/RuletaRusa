@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core.DataTransferObject\Core.DataTransferObject.csproj" />
+    <ProjectReference Include="..\Core.Entities\Core.Entities.csproj" />
+    <ProjectReference Include="..\Data.Common.Definition\Data.Common.Definition.csproj" />
+  </ItemGroup>
+
+</Project>
