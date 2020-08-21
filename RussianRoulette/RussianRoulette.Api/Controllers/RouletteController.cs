@@ -11,9 +11,9 @@ using RussianRoulette.Api.Model;
 namespace RussianRoulette.Api.Controllers
 {
     /// <summary>
-        /// Roulette
-        /// </summary>
-        [ApiController]
+    /// Roulette
+    /// </summary>
+    [ApiController]
     [Route("[controller]")]
     public class RouletteController : CommonController
     {
@@ -37,8 +37,13 @@ namespace RussianRoulette.Api.Controllers
         [ProducesResponseType(400, Type = typeof(ApiBadResponse))]
         public async Task<IActionResult> Get()
         {
-            var result = new BaseApiResponse();
-            return Ok(result);
+            var appResult = await _rouletteAppService.GetAll();
+            if (appResult.Success)
+            {
+                return Ok(appResult.Data);
+            }
+
+            return BadRequest(appResult);
         }
 
         /// <summary>
@@ -62,9 +67,9 @@ namespace RussianRoulette.Api.Controllers
                 {
                     return BadRequest(result);
                 }
-                var appResult =await _rouletteAppService.CreateRoulette(new Roulette
+                var appResult = await _rouletteAppService.CreateRoulette(new Roulette
                 {
-                    
+
                 });
                 if (appResult.Success)
                 {
@@ -108,7 +113,7 @@ namespace RussianRoulette.Api.Controllers
                 }
 
 
-                var appResult =await _rouletteAppService.OpenRoulette(model.Id);
+                var appResult = await _rouletteAppService.OpenRoulette(model.Id);
                 if (appResult.Success)
                 {
                     return Ok(appResult.Data);
@@ -123,7 +128,7 @@ namespace RussianRoulette.Api.Controllers
             {
                 return StatusCode(500,
                     new BaseApiResponse
-                        { Code = 500, Message = ex.InnerException != null ? ex.InnerException.Message : ex.Message });
+                    { Code = 500, Message = ex.InnerException != null ? ex.InnerException.Message : ex.Message });
             }
         }
     }

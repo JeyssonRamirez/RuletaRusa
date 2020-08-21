@@ -14,7 +14,7 @@ namespace Core.GlobalRepository
 {
     public interface IBetRepository
     {
-        Task<Bet> AddRoulette(Bet data);
-        Task<Bet> GetRoulette(Bet data);
+        Task<Bet> AddBet(Bet data);
+        Task<Bet> GetBet(Bet data);
     }
 }

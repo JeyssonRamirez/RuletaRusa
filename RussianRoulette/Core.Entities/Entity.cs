@@ -15,7 +15,7 @@ namespace Core.Entities
     {
 
         public Guid Id { get; set; }
-        public DateTime RegistrationDate { get; set; }
+        //public DateTime RegistrationDate { get; set; }
         public StatusType Status { get; set; }
 
 

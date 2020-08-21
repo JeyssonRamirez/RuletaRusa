@@ -20,7 +20,7 @@ namespace Data.Common.Definition
         Task<int> CommitInt();
         Task RollbackChanges();
         Task AttachEntity<T>(T item) where T : Entity;
-        Task<T> AddEntity<T>(T item) where T : Entity;
+        Task<bool> AddEntity<T>(T item) where T : Entity;
         Task<bool> RemoveEntity<T>(T item) where T : Entity;
         Task<int> ExecuteQuery(string query, List<ParameterDto> parameters, bool procedure);
     }

@@ -32,7 +32,7 @@ namespace Data.Common.Implementation.MongoDb
             throw new System.NotImplementedException();
         }
 
-        public Task<T> AddEntity<T>(T item) where T : Entity
+        public Task<bool> AddEntity<T>(T item) where T : Entity
         {
             throw new System.NotImplementedException();
         }

@@ -8,6 +8,8 @@
 //   -----------------------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.GlobalRepository;
@@ -27,25 +29,48 @@ namespace DataAccess.Provider.RedisDb
         {
         }
 
+        public Task<List<Roulette>> GetAllRoulette()
+        {
+             List<Roulette>  list = new List<Roulette>();
+             var rouletteKey = GetKeyList().Where(s=>s.Contains("Roulette")).ToList();
+
+            foreach (var key in rouletteKey)
+            {
+                list.Add(Get<Roulette>(key));
+            }
+
+            return Task.FromResult(list);
+
+        }
+
         public async Task<Roulette> AddRoulette(Roulette data)
         {
-           return await this.AddEntity(data);
+            if (await AddEntity(data))
+            {
+                return data;
+            }
+
+            throw new Exception("Algo paso en el Insercion ");
         }
 
         public async Task<Roulette> GetRoulette(Roulette data)
         {
-            var r=await GetOne<Roulette>(data);
+            var r=await GetOne(data);
             return r;
         }
 
         public async Task<Roulette> UpdateRoulette(Roulette data)
         {
             var r = await GetOne(data);
-            r.Color = data.Color;
-            r.Open = data.Open;
-            r.Open = data.Open;
-            return await this.AddEntity(data);
-            
+
+            Mapper(data, r);
+
+            if (await AddEntity(r))
+            {
+                return data;
+            }
+            throw new Exception("Algo paso en el Insercion ");
+
         }
     }
 }

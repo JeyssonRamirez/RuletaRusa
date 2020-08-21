@@ -9,6 +9,7 @@ namespace Core.GlobalRepository
 {
     public interface IRouletteRepository
     {
+        Task<List<Roulette>> GetAllRoulette();
         Task<Roulette> AddRoulette(Roulette data);
         Task<Roulette> GetRoulette(Roulette data);
         Task<Roulette> UpdateRoulette(Roulette data);

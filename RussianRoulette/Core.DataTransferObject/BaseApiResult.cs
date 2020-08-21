@@ -7,7 +7,8 @@
 //   <Update> 2020-08-20 - 11:57</Update>
 //   -----------------------------------------------------------------------
 
-using System;
+using System.Collections.Generic;
+using Core.Entities;
 
 namespace Core.DataTransferObject
 {
@@ -17,15 +18,12 @@ namespace Core.DataTransferObject
         public string Message { get; set; }
         public object Data { set; get; }
     }
-    public class CreateRouletteResult: BaseApiResult
-    {
-        public new Guid Data { set; get; }
-    }
 
-    public class OpenRouletteResult : BaseApiResult
+
+    public class GetAllRouletteResult : BaseApiResult
     {
-        
-        public new bool Data { set; get; }
+
+        public new List<Roulette> Data { set; get; }
     }
 
     public class ClosedBetResult : BaseApiResult

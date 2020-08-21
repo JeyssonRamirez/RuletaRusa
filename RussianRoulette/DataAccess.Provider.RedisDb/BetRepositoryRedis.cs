@@ -14,12 +14,17 @@ namespace DataAccess.Provider.RedisDb
         public BetRepositoryRedis(IOptions<GeneralOptions> options) : base(options)
         {
         }
-        public async Task<Bet> AddRoulette(Bet data)
+        public async Task<Bet> AddBet(Bet data)
         {
-            return await this.AddEntity(data);
+            if (await AddEntity(data))
+            {
+                return data;
+            }
+
+            throw new Exception("Algo paso en el Insercion ");
         }
 
-        public async Task<Bet> GetRoulette(Bet data)
+        public async Task<Bet> GetBet(Bet data)
         {
             var r = await GetOne(data);
             return r;

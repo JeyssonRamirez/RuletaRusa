@@ -23,9 +23,18 @@ namespace Application.Implementation
     public class RussianRouletteAppService : IRussianRouletteAppService
     {
         private readonly IRouletteRepository _rouletteRepository;
-        public BaseApiResult GetAll()
+
+        public RussianRouletteAppService(IRouletteRepository rouletteRepository)
         {
-            throw new NotImplementedException();
+            _rouletteRepository = rouletteRepository;
+        }
+
+        public async Task<GetAllRouletteResult> GetAll()
+        {
+            var r = new GetAllRouletteResult();
+            var data = await _rouletteRepository.GetAllRoulette();
+            r.Data = data;
+            return r;
         }
 
         public async Task<CreateRouletteResult> CreateRoulette(Roulette roulette)
@@ -33,15 +42,15 @@ namespace Application.Implementation
             roulette.Id = Guid.NewGuid();
             roulette.Open = false;
             roulette.Color = ColorType.NotDefined;
+            roulette.Status = StatusType.Inactive;
             roulette.WinnerNumber = -1;
-
             roulette = await _rouletteRepository.AddRoulette(roulette);
 
 
 
             var result = new CreateRouletteResult();
-
             result.Data = roulette.Id;
+            result.Success = true;
 
             return result;
         }
@@ -49,7 +58,10 @@ namespace Application.Implementation
         public async Task<OpenRouletteResult> OpenRoulette(Guid rouletteId)
         {
             var current = await _rouletteRepository.GetRoulette(new Roulette { Id = rouletteId });
+
+
             current.Open = true;
+            current.Status = StatusType.Active;
             current = await _rouletteRepository.UpdateRoulette(current);
 
             var result = new OpenRouletteResult();
